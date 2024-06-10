@@ -8,7 +8,7 @@ export default function Component() {
         <div className="container mx-auto flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-2">
             <Link href="#" className="flex items-center" prefetch={false}>
-                <span className="text-white text-xl font-semibold">OlY</span>
+                <span className="text-white text-2xl font-mono">OlX</span>
             </Link>
           </div>
           <div className="flex items-center gap-4">

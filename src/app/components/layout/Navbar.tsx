@@ -34,11 +34,11 @@ const Navbar = () => {
 
   return (
     <nav className="font-mono  border-b-2 border-gray-200 shadow-sm rounded-lg">
-      <div className="flex justify-between py-6 w-[95%] sm:w-[90%] mx-auto items-center">
+      <div className="flex justify-between py-6 w-[90%] mx-auto items-center">
         <div className='items-center flex w-full'>
           <Link href="/" className="group transition duration-200 ease-in-out text-xl md:text-2xl lg:text-2xl font-semibold hover:text-emerald-500">
             {/* Blog<span className="group-hover:text-emerald-500 text-gray-500 transition duration-200 ease-in-out">Post</span> */}
-            OlY
+            OlX
           </Link>
 
           {/* <div className="relative">
@@ -98,10 +98,10 @@ const Navbar = () => {
         <div className="sm:hidden bg-white shadow-md rounded-b-lg border-t-[1px] border-t-gray-300">
           <div className='space-y-3 py-3 w-[90%] mx-auto'>
             <Link href="/" className="block text-xl text-center font-bold border-b-[1px] border-gray-300 pb-2">Home</Link>
-            <Link href="/blogs" className="block text-xl text-center font-bold border-b-[1px] border-gray-300 pb-2">Products</Link>
-            <Link href="/about" className="block text-xl text-center font-bold border-b-[1px] border-gray-300 pb-2">About</Link>
-            <Link className="mx-auto py-1 px-3 border-2 border-black transition duration-200 ease-in-out hover:bg-black hover:text-white rounded-lg" href="/upload">Add product</Link>
-          
+            <Link href="/products" className="block text-xl text-center font-bold border-b-[1px] border-gray-300 pb-2">Products</Link>
+            {/* <Link href="/about" className="block text-xl text-center font-bold border-b-[1px] border-gray-300 pb-2">About</Link> */}
+            <Link href="/upload" className="block text-xl text-center font-bold">Add Product</Link>
+            
             {/* {token ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

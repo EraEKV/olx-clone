@@ -31,25 +31,46 @@ axiosProducts.interceptors.response.use(response => {
     return Promise.reject(error);
 });
 
-export default axiosProducts;
 
 
-// const axiosQueryProduct = axios.create({
-//     baseURL: 'https://jsonplaceholder.typicode.com/',
-// });
 
 
-// axiosQueryProduct.interceptors.request.use(config => {
-    
-// }, error => {
-    
-// });
 
-// axiosQueryProduct.interceptors.response.use(response => {
-    
-// }, error => {
-    
-// });
 
-// export { axiosProducts, axiosQueryProduct };
-export { axiosProducts }
+const axiosQueryProduct = axios.create({
+    baseURL: 'https://api.escuelajs.co/api/v1/files/upload'
+});
+
+// Request interceptor
+axiosQueryProduct.interceptors.request.use(config => {
+    // config.headers['Authorization'] = `Bearer YOUR_ACCESS_TOKEN`;
+    // console.log('Request:', config);
+    return config;
+}, error => {
+    // Error handling
+    console.error('Request error:', error);
+    return Promise.reject(error);
+});
+
+
+axiosQueryProduct.interceptors.response.use(response => {
+    console.log('Response:', response);
+    return response;
+}, error => {
+    console.error('Response error:', error);
+    if (error.response) {
+        // Server error (4xx, 5xx)
+        console.error('Error data:', error.response.data);
+    } else if (error.request) {
+        // request sended but no response
+        console.error('No response:', error.request);
+    } else {
+        // Error request settings
+        console.error('Error message:', error.message);
+    }
+    return Promise.reject(error);
+});
+
+
+export { axiosProducts, axiosQueryProduct};
+// export { axiosProducts }
