@@ -1,6 +1,6 @@
 import { axiosProducts } from "../Service/ProductsService";
 import { useQuery, useQueries } from "@tanstack/react-query";
-import Product from "@/app/types/productInterface";
+import Product from "@/app/types/ProductInterface";
 
 // Function to fetch a single product by ID
 const fetchProductById = async (id: string | string[]): Promise<Product> => {
