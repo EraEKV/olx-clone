@@ -1,7 +1,7 @@
 import React, { ChangeEvent, DragEvent } from 'react';
 
 interface ImageUploadProps {
-  onUpload: (file: File) => void;
+  onUpload: (files: File[]) => void;
   uploadProgress: number[];
   imageUrls: string[];
 }
@@ -9,13 +9,13 @@ interface ImageUploadProps {
 const ImageUpload: React.FC<ImageUploadProps> = ({ onUpload, uploadProgress, imageUrls }) => {
   const handleFilesChange = (e: ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
-    files.forEach(file => onUpload(file));
+    onUpload(files);
   };
 
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const files = Array.from(e.dataTransfer.files);
-    files.forEach(file => onUpload(file));
+    onUpload(files);
   };
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {

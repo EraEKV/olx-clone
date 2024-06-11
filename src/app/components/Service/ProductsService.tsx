@@ -38,7 +38,7 @@ axiosProducts.interceptors.response.use(response => {
 
 
 const axiosQueryProduct = axios.create({
-    baseURL: 'https://api.escuelajs.co/api/v1/files/upload'
+    baseURL: 'https://api.escuelajs.co/api/v1/files'
 });
 
 // Request interceptor
