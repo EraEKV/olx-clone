@@ -15,13 +15,13 @@ const Card: React.FC<CardProps> = ({ product }) => {
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-sm border border-gray-200 hover:scale-105 transition duration-300 ease-in-out">
       <Link href={`/products/${product.id}`} className="hover:scale-105 transition duration-300 ease-in-out">
         <div className="flex flex-col justify-between h-full border rounded-lg overflow-hidden">
-          <img 
+          <Image 
             src={product.image} 
             width={400} 
             height={400} 
             alt="Product Image" 
             className="max-h-[200px] w-auto mx-auto pt-10 px-10" 
-          />
+          ></Image>
           {/* <Image
             src={product.image} 
             alt="Product Image"

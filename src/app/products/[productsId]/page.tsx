@@ -4,6 +4,7 @@ import { useParams } from 'next/navigation'
 import React, { useState } from 'react'
 import useProductById from '@/app/components/hooks/useProductById';
 import { Loading } from '@/app/components/layout/Loading';
+import Image from 'next/image';
 
 
 const Product = () => {
@@ -22,11 +23,11 @@ const Product = () => {
   return (isSuccess && 
     <div className='min-h-screen max-w-[90%] sm:max-w-[500px] md:max-w-[1200px] mx-auto'>
       <div className="grid md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto py-12 px-4 my-8 md:my-16">
-        <img
+        <Image
           src={product.image}
           alt="Product Image"
           className="max-h-[400px] mx-auto my-auto"
-        />
+        ></Image>
         <div className="grid gap-4">
           <div>
             <span className="inline-block bg-gray-100 px-3 py-2 text-sm font-medium rounded-lg">

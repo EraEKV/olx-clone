@@ -1,4 +1,5 @@
 import React, { ChangeEvent, DragEvent } from 'react';
+import Image from 'next/image';
 
 interface ImageUploadProps {
   onUpload: (files: File[]) => void;
@@ -32,7 +33,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onUpload, uploadProgress, ima
         <div className="grid grid-cols-2 gap-2">
           {imageUrls.map((image, index) => (
             <div key={index} className="relative">
-              <img src={image} alt="Uploaded" className="w-full h-auto rounded-lg" />
+              <Image src={image} alt="Uploaded" className="w-full h-auto rounded-lg" ></Image>
               {uploadProgress[index] < 100 && (
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 rounded-lg">
                   <div className="bg-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{ width: `${uploadProgress[index]}%` }}>
