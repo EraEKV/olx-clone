@@ -10,7 +10,7 @@ const Products: React.FC = () => {
   const { data: products, isSuccess, isLoading } = useProducts(); 
   
   if (isLoading) {
-    <Loading />
+    return <Loading />
   }
 
   // if (error) return <div>An error occurred: {error.message}</div>;

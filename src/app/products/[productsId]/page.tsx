@@ -1,17 +1,22 @@
 "use client"
 
 import { useParams } from 'next/navigation'
-import React from 'react'
+import React, { useState } from 'react'
 import useProductById from '@/app/components/hooks/useProductById';
 import { Loading } from '@/app/components/layout/Loading';
 
 
 const Product = () => {
-  const { productsId } = useParams();    
-  const { data: product, isSuccess, isLoading } = useProductById(productsId);
+  const { productsId } = useParams();  
+
+  const getRandomId = () => {
+    return (Math.floor(Math.random() * 10) + 1).toString();
+  };
+
+  const { data: product, isSuccess, isLoading } = useProductById(productsId ?? getRandomId());
 
   if (isLoading) {
-    <Loading />
+    return <Loading />
   }
 
   return (isSuccess && 
